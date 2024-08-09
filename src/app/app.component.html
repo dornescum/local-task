@@ -1,8 +1,8 @@
 <div class="container">
   <nav class="navbar  navbar-expand-lg  navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/register">Register</a>
-    <a class="navbar-brand" routerLink="/login">Login</a>
-    <a class="navbar-brand" routerLink="/tasks">Tasks</a>
+    <a class="navbar-brand" routerLink="/register" *ngIf="!isLoggedIn()">Register</a>
+    <a class="navbar-brand" routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
+    <a class="navbar-brand" routerLink="/tasks" *ngIf="isLoggedIn()">Tasks</a>
     <button (click)="logout()" *ngIf="isLoggedIn()" class="btn btn-primary">Logout</button>
   </nav>
 </div>

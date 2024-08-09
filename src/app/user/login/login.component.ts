@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-
+  errorMessage = '';
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private router: Router) {
@@ -31,7 +31,11 @@ export class LoginComponent implements OnInit {
           console.log('Login successful:', token);
           this.router.navigate(['/tasks']);
         },
-        error => console.error('Login error:', error)
+        // error => console.error('Login error:', error)
+        error => {
+          this.errorMessage = error;
+          console.error('Registration error:', error);
+        }
       );
     }
   }
