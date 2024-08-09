@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" id="title" formControlName="title" class="form-control" placeholder="Enter task title">
+      <div *ngIf="taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)" class="invalid-feedback">
+        Title is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea id="description" formControlName="description" class="form-control" placeholder="Enter task description"></textarea>
+      <div *ngIf="taskForm.get('description')?.invalid && (taskForm.get('description')?.dirty || taskForm.get('description')?.touched)" class="invalid-feedback">
+        Description is required
+      </div>
+    </div>
+    <button type="submit" [disabled]="!taskForm.valid" class="btn btn-primary">Save Task</button>
+  </form>
+</div>
+
+
