@@ -19,11 +19,7 @@ export class TaskFormComponent implements OnChanges {
     });
   }
 
-  // ngOnInit(): void {
-  // }
-
   ngOnChanges(changes: SimpleChanges) {
-    console.log('changes ', changes)
     if (changes['task'] && this.task) {
       this.taskForm.patchValue(this.task);
     }
@@ -51,5 +47,4 @@ export class TaskFormComponent implements OnChanges {
       }
     }
   }
-
 }

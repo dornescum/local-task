@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
 import { User } from '../models/models';
 
@@ -9,7 +8,7 @@ import { User } from '../models/models';
 export class AuthService {
   private readonly USERS_KEY = 'users';
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   register(user: User): Observable<User> {
     const users = this.getUsers();

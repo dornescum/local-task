@@ -29,7 +29,6 @@
         <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
       </div>
     </div>
-
     <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Register</button>
   </form>
 

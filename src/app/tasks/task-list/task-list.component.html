@@ -1,5 +1,4 @@
 <div class="container">
-
   <h2 class="my-3 mx-1">Add Tasks</h2>
   <app-task-form (taskSaved)="loadTasks()"></app-task-form>
   <ul class="list-group">
@@ -7,7 +6,6 @@
       <div class="d-flex justify-content-center align-items-center">
         {{ task.title }} - {{ task.description }}
       </div>
-
       <div>
         <button (click)="deleteTask(task.id ?? '')" class="btn btn-danger m-1">
           <img  src="assets/svg/delete.svg" alt="Delete" >
@@ -16,7 +14,6 @@
           <img  src="assets/svg/edit.svg" alt="edit" >
         </button>
       </div>
-
     </li>
   </ul>
   <div *ngIf="editingTask">

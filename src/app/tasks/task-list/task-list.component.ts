@@ -32,7 +32,6 @@ export class TaskListComponent implements OnInit {
   }
 
   editTask(task: Task) {
-    console.log('task ', task)
     this.editingTask = { ...task };
   }
 

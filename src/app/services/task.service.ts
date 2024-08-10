@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {Task, User} from "../models/models";
+import {Task} from "../models/models";
 import {AuthService} from "./auth.service";
 
 @Injectable({
@@ -21,10 +20,7 @@ export class TaskService {
     const currentUser =  this.authService.getCurrentUser();
     const userId = currentUser.id;
     const filteredTasks = tasks.filter(task => task.userId === userId);
-    console.log('Tasks:', tasks);
-    console.log('Tasks filtered:', filteredTasks);
     return of(filteredTasks);
-
   }
 
   private saveTasks(tasks: Task[]): void {
@@ -49,7 +45,7 @@ export class TaskService {
       this.saveTasks(tasks);
       return of(task);
     }
-    return of(null); // error
+    return of(null);
   }
 
   deleteTask(id: string): Observable<void> {
