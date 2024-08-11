@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -29,15 +29,7 @@ export class AuthGuardService {
   }
 
   private isAuthenticated(): Observable<boolean> {
-    // Replace with your authentication logic
     return of(!!localStorage.getItem('currentUser'));
   }
 
-  // canActivate(): boolean {
-  //   if (localStorage.getItem('currentUser')) {
-  //     return true;
-  //   }
-  //   this.router.navigate(['/login']);
-  //   return false;
-  // }
 }
